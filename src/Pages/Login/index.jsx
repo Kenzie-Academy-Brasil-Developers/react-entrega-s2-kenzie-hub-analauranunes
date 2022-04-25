@@ -56,7 +56,7 @@ export const Login = () => {
         <h1>Login</h1>
         <Input
           name="email"
-          type="email"
+          type="text"
           label="E-mail"
           placeholder="Digite seu e-mail"
           register={register}

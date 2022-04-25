@@ -4,8 +4,9 @@ export const GlobalStyle = createGlobalStyle`
     :root{
         margin: 0;
         padding: 0;
-        height: 100vh;
-        width: 100vw;
+        border: none;
+        /* height: 100vh;
+        width: 100vw; */
         background: var(--grey-4);
         font-family: "Inter", sans-serif;
         color: var(--grey-0);
@@ -29,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
         --toastify-toast-max-height: 69px;
         --toastify-toast-width: 286px;
     }
+
 
     button{
         cursor: pointer;

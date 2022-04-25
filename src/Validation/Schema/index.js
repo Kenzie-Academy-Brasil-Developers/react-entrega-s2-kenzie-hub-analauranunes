@@ -13,6 +13,7 @@ export const SchemaRegister = yup.object().shape({
     .string()
     .oneOf([yup.ref("password")], "Senhas estão diferentes")
     .required("Campo obrigatório"),
+  course_module: yup.string().required("Campo obrigatório")
 });
 
 export const SchemaLogin = yup.object().shape({
