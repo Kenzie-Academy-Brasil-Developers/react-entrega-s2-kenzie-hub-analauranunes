@@ -8,8 +8,9 @@ import { API } from "../../Services/API";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Styled from "./style";
+import { Redirect } from "react-router-dom";
 
-export const Register = () => {
+export const Register = ({authenticated}) => {
   const history = useHistory();
 
   const {
@@ -34,6 +35,10 @@ export const Register = () => {
   const handleClick = () => {
     history.push("/");
   };
+
+  if(authenticated){
+    return <Redirect to="/Home"/>
+  }
 
   return (
     <Styled.ContainerDiv>

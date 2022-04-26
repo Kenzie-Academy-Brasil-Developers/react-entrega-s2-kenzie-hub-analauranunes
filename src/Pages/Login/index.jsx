@@ -6,13 +6,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { API } from "../../Services/API";
 import { Redirect, useHistory } from "react-router-dom";
-import { useState } from "react";
 import * as Style from "./styles";
 import { toast } from "react-toastify";
 
-export const Login = () => {
+export const Login = ({authenticated, setAuthenticated}) => {
   const history = useHistory();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const {
     register,
@@ -32,7 +30,7 @@ export const Login = () => {
 
         toast.success("Login efetuado com sucesso!");
 
-        setIsLoggedIn(true);
+        setAuthenticated(true);
         history.push("/Home");
       })
 
@@ -41,8 +39,8 @@ export const Login = () => {
       });
   };
 
-  if (isLoggedIn) {
-    return <Redirect to="/Home" />;
+  if (authenticated) {
+    return <Redirect to="/Home"/>;
   }
 
   const handleClick = () => {
